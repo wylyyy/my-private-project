@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>Session Tracking Demo</display-name>
+
+    <!-- 配置ShowSession Servlet -->
+    <!--注册Servlet,别名+完整类名-->
+    <servlet>
+        <servlet-name>ShowSession</servlet-name>
+        <servlet-class>ncu.wyl.demo2.ShowSession</servlet-class><!--指向具体的Java类（代码在哪里）-->
+    </servlet>
+    <!--映射URL，关联到哪个Servlet+浏览器访问的URL-->
+    <servlet-mapping>
+        <servlet-name>ShowSession</servlet-name>
+        <url-pattern>/ShowSession</url-pattern><!--定义浏览器访问的地址（怎么找到它）-->
+    </servlet-mapping>
+
+    <!-- 配置SendCookie Servlet -->
+    <servlet>
+        <servlet-name>SendCookie</servlet-name>
+        <servlet-class>ncu.wyl.demo2.SendCookie</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SendCookie</servlet-name>
+        <url-pattern>/SendCookie</url-pattern>
+    </servlet-mapping>
+
+    <!-- 配置GetCookie Servlet -->
+    <servlet>
+        <servlet-name>GetCookie</servlet-name>
+        <servlet-class>ncu.wyl.demo2.GetCookie</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetCookie</servlet-name>
+        <url-pattern>/GetCookie</url-pattern>
+    </servlet-mapping>
+</web-app>
